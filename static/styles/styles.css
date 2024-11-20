@@ -1,0 +1,40 @@
+#banner {
+    background-image: url("../images/premium_photo-1664303510541-2eedfe6bdb91 (1).png");
+    color: white;
+    padding-top: 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#mission {
+    padding-top: 5%;
+    padding-left: 0%;
+    font-family: "Monaco", monospace;
+}
+
+#mission div {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#mission div div {
+    width: 100vw;
+}
+
+#mission div div h4 {
+    padding-top: 2%;
+}
+
+#mission div div p {
+    padding-top: 1%;
+}
+
+#mission-text {
+    margin-left: 5%;
+    margin-right: 5%;
+}

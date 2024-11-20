@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Eagle Has Landed{% endblock %}
+{% block links %}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-us">About Us</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/meat-and-potatoes">Meat & Potatoes</a>
+</li>
+{% endblock %}
+{% block body %}
+<section id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Team EagleHasLanded Presents:</h5>
+                <p class="title">NASA ADC:<br>Artemis II Edition</p>
+                <p>We created a simulation of the manned Artemis II mission around the moon. Click below to go to the simulation.</p>
+                <br>
+                <form action="/meat-and-potatoes">
+                    <input type="submit" value="Meat & Potatoes" class="btn btn-primary"/>
+                </form>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="mission">
+    <div class="container text-center d-flex flex-column align-items-center">
+        <div class="row">
+            <div class="col">
+                <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2019/03/orion_and_european_service_module_orbiting_earth/19291688-2-eng-GB/Orion_and_European_Service_Module_orbiting_Earth_pillars.jpg" width="100%" height="100%" style="object-fit: cover">
+            </div>
+            <div class="col" id="mission-text">
+                <br>
+                <h1 class="text-primary"><b>T H E<br>M I S S I O N</b></h1>
+                <h4>Manned Artemis II Mission</h4>
+                <p>Next September, four astronauts will launch NASA’s return to the Moon with the first crewed mission there since Apollo 17 in 1972. It will be the first crewed mission on NASA’s path to a long-term presence on the Moon. The trip will be a 10-day excursion that will test the SLS rocket, the Orion spacecraft, and NASA’s foundational human deep space exploration capabilities.</p>
+            </div>
+            <div class="col">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Artemis_2_Crew_Portrait.jpg/1200px-Artemis_2_Crew_Portrait.jpg" width="100%" height="100%" style="object-fit: cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
