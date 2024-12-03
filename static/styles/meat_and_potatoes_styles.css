@@ -1,0 +1,81 @@
+html, body {
+    width: 100%; height: 100%; margin: 0; padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+#cesiumContainer{
+  width: 60vw; height: 60vh; margin: 0; padding 0;
+}
+
+#viewpoints {
+    line-height:30px;
+    color:white;
+   /* height:300px; */
+    width:200px;
+    padding:5px;
+}
+section {
+    width:1200px;
+    float:left;
+    padding:10px;
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+
+#meat-container {
+    box-sizing: border-box;
+    padding-left: 1%;
+    margin: 0px;
+}
+
+#meat-container * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+  #r1 {
+    height: 10vh;
+    width: 100vw;
+  }
+  #r2 {
+    height: 60vh;
+    width: 100vw;
+    margin-bottom: 5vh;
+  }
+  #r3 {
+    height: 10vh;
+    width: 100vw;
+  }
+  .c1 {
+    width: 20vw;
+  }
+  .c2 {
+    width: 60vw;
+  }
+  .c3 {
+    width: 20vw;
+  }
+#timer {
+    width: 10vh;
+    height: 10vh;
+}
+svg text {
+    fill: white;
+}
+#progress {
+    width: 60vw;
+    height: 10vh;
+}
+#announcement{
+    color: white;
+}

@@ -8,75 +8,11 @@
   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/meat_and_potatoes_styles.css') }}" />
   <title>EHL: Meat and Potatoes</title>
    	  <!-- Include the CesiumJS JavaScript and CSS files -->
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.79.1/Build/Cesium/Cesium.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.79.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-
-<style>
-html, body {
-    width: 100%; height: 100%; margin: 0; padding: 0;
-}
-
-#cesiumContainer{
-  width: 60vw; height: 60vh; margin: 0; padding 0;
-}
-
-#viewpoints {
-    line-height:30px;
-    background-color:#eeeeee;
-   /* height:300px; */
-    width:200px;
-    padding:5px;
-}
-section {
-    width:1200px;
-    float:left;
-    padding:10px;	 	 
-}
-footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px;	 	 
-}
-
-#meat-container {
-    box-sizing: border-box;
-    padding-left: 1%;
-    margin: 0px;
-}
-
-#meat-container * {
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
-}
-
-  #r1 {
-    height: 10vh;
-    width: 100vw;
-  }
-  #r2 {
-    height: 60vh;
-    width: 100vw;
-    margin-bottom: 5vh;
-  }
-  #r3 {
-    height: 10vh;
-    width: 100vw;
-  }
-  .c1 {
-    width: 20vw;
-  }
-  .c2 {
-    width: 60vw;
-  }
-  .c3 {
-    width: 20vw;
-  }
-</style>
 <script>
 
 function bigPicture() {
@@ -188,7 +124,7 @@ function activateButtons() {
   <div class="row" id="r1">
     <div class="col c1" id="r1c1">
       <nav id="viewpoints">
-      <h3>Viewpoints</h3>
+      <h4>Viewpoints</h4>
       <input type="button" id="bigPicture" value="Big Picture" onclick="bigPicture();" />
       <input type="button" id="showShip" value="Spacecraft" onclick="showSpaceCraft();" />
       <input type="button" id="showMoon" value="Moon" onclick="showTheMoon();" />
@@ -196,16 +132,26 @@ function activateButtons() {
       </nav>
     </div>
     <div class="col c2" id="r1c2">
-    Progress Bar (with stages)
+        <svg id="progress" viewbox="0 0 2000 200">
+            <path d="" fill="none" stroke="grey" stroke-width="10" id="unfilled_bar"></path>
+            <path d="" fill="none" stroke="blue" stroke-width="10" id="filled_bar"></path>
+            <text x="860" y="50" textLength="280" font-size="28">Distance Progress</text>
+            <text x="0" y="50" font-size="28">0km</text>
+            <text x="1880" y="50" font-size="28">10,300km</text>
+        </svg>
     </div>
     <div class="col c3" id="r1c3">
-        Timer
+        <svg id="timer" viewbox="0 0 100 100">
+            <path d="M 50 5 A 45 45 0 1 1 50 5" fill="none" stroke="grey" stroke-width="5" id="unfilled_circle"></path>
+            <path d="M 50 5 A 45 45 0 0 1 50 5" fill="none" stroke="red" stroke-width="5" id="filled_circle"></path>
+            <text x="20" y="50" textLength="70" font-size="14">Time Progress</text>
+        </svg>
     </div>
   </div>
   <div class="row" id="r2">
     <div class="col c1" id="r2c1">
       <br>
-      Ask ChatGPT
+      <img src="{{ url_for('static',filename='/images/Screenshot 2024-12-03 090630.png') }}" width="100%" height="50%" style="object-fit: cover">
     </div>
     <div class="col c2" id="r2c2">
 <section>
@@ -34253,7 +34199,43 @@ function activateButtons() {
 </section>
     </div>
     <div class="col c3" id="r2c3">
-      Antennas
+        <h4>Antennas</h4>
+        <table class="table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Antenna</th>
+              <th scope="col">Availability</th>
+              <th scope="col">Viability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>WPSA</td>
+              <td>Available</td>
+              <td>---</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>DS54</td>
+              <td>Unavailable</td>
+              <td>---</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>DS24</td>
+              <td>Unavailable</td>
+              <td>---</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>DS34</td>
+              <td>Unavailable</td>
+              <td>---</td>
+            </tr>
+          </tbody>
+        </table>
     </div>
   </div>
   <div class="row" id="r3">
@@ -34268,6 +34250,36 @@ function activateButtons() {
     </div>
   </div>
 </div>
-
+<script>
+    var start_time = Cesium.JulianDate.fromIso8601("2024-06-11T15:25:47Z");
+    var end_time = Cesium.JulianDate.fromIso8601("2024-06-20T15:48:57Z");
+    var total_time = Cesium.JulianDate.secondsDifference(start_time, end_time);
+    let timer;
+    timer = setInterval(function () {
+        var current_time = clock.currentTime;
+        var delta = Cesium.JulianDate.secondsDifference(start_time, current_time);
+        var ratio = delta / total_time;
+        var radians = (-1 * (ratio * Math.PI * 2)) + (Math.PI * (1/2));
+        var filled_distance = ratio * 2000
+        var unfilled_circle = document.getElementById("unfilled_circle");
+        var filled_circle = document.getElementById("filled_circle");
+        var unfilled_bar = document.getElementById("unfilled_bar");
+        var filled_bar = document.getElementById("filled_bar");
+        var pivot_x = 50 + 45 * Math.cos(radians);
+        var pivot_y = 50 - 45 * Math.sin(radians);
+        if (ratio > 0.5) {
+            var large_filled = "1";
+            var large_unfilled = "0";
+        }
+        else {
+            var large_filled = "0";
+            var large_unfilled = "1";
+        }
+        unfilled_circle.attributes.getNamedItem("d").value = "M " + pivot_x + " " + pivot_y + " A 45 45 0 " + large_unfilled + " 1 50 5";
+        filled_circle.attributes.getNamedItem("d").value = "M 50 5 A 45 45 0 " + large_filled + " 1 " + pivot_x + " " + pivot_y;
+        unfilled_bar.attributes.getNamedItem("d").value = "M " + filled_distance + " 50 H 2000";
+        filled_bar.attributes.getNamedItem("d").value = "M 0 50 H " + filled_distance;
+    }, 100);
+</script>
 </body>
 </html>
