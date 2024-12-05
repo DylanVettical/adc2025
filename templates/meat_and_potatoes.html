@@ -34129,14 +34129,10 @@ function activateButtons() {
 		]
     } }];
    var czmlDataSource1 = new Cesium.CzmlDataSource();
-    // czmlDataSource1.load('LunarProbeTrajectory_withBillboard.czml');
-   	//   czmlDataSource1 = document.querySelector("#billboard").innerText ;
 	   czmlDataSource1.load(lunarProbe_billboard);
        viewer.dataSources.add(czmlDataSource1);
 
    var czmlDataSource2 = new Cesium.CzmlDataSource();
-      //  czmlDataSource2.load('LunarOrbit_withTexture.czml');
-	   // czmlDataSource2 = document.querySelector("#trajectory").innerText ;
 	   czmlDataSource2.load(lunarOrbit_trajectory);
        viewer.dataSources.add(czmlDataSource2);
 
