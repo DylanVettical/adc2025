@@ -8,7 +8,7 @@ body {
 }
 
 #cesiumContainer{
-  width: 60vw; height: 60vh; margin: 0; padding 0;
+  width: 60vw; height: 70vh; margin: 0; padding 0;
 }
 
 #viewpoints {
@@ -48,13 +48,9 @@ footer {
     width: 100vw;
   }
   #r2 {
-    height: 60vh;
+    height: 70vh;
     width: 100vw;
     margin-bottom: 5vh;
-  }
-  #r3 {
-    height: 10vh;
-    width: 100vw;
   }
   .c1 {
     width: 20vw;

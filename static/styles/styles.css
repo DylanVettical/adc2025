@@ -1,9 +1,16 @@
-#banner {
-    background-image: url("../images/premium_photo-1664303510541-2eedfe6bdb91 (1).png");
+.banner {
     color: white;
     padding-top: 20%;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#index-banner {
+    background-image: url("../images/premium_photo-1664303510541-2eedfe6bdb91 (1).png");
+}
+
+#about-us-banner {
+    background-image: url("../images/Bald-eagle.png");
 }
 
 .title {

@@ -11,3 +11,22 @@
   <a class="nav-link" href="/meat-and-potatoes">Meat & Potatoes</a>
 </li>
 {% endblock %}
+{% block body %}
+<section class="banner" id="about-us-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Team EagleHasLanded Presents:</h5>
+                <p class="title">NASA ADC:<br>Artemis II Edition</p>
+                <p>We created a simulation of the manned Artemis II mission around the moon. Click below to go to the simulation.</p>
+                <br>
+                <form action="/meat-and-potatoes">
+                    <input type="submit" value="Meat & Potatoes" class="btn btn-primary"/>
+                </form>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
