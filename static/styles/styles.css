@@ -45,3 +45,28 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
+#profiles {
+    padding-top: 5%;
+    padding-left: 5%;
+    font-family: "Monaco", monospace;
+}
+
+#profiles div {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2vh;
+}
+
+#profiles div div {
+    width: 100vw;
+    padding-bottom: 5vh;
+}
+
+#profiles div div div img {
+    object-fit: cover;
+}
+
+#profiles div div div h4{
+    margin-top: 10px;
+}
