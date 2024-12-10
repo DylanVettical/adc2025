@@ -70,3 +70,23 @@
 #profiles div div div h4{
     margin-top: 10px;
 }
+
+#outreach {
+    padding-top: 5%;
+    padding-left: 5%;
+    font-family: "Monaco", monospace;
+}
+
+#outreach div {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2vh;
+}
+
+#outreach div h4{
+    margin-top: 10px;
+}
+
+#outreach div img {
+    object-fit: cover;
+}
